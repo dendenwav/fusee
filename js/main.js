@@ -7,9 +7,11 @@
 let chrono;
 let button = document.querySelector('#firing-button');
 let span = document.querySelector('span');
+let rocket = document.querySelector('#rocket');
 
-  button.addEventListener('click',function() {
+button.addEventListener('click',function() {
   chrono = 10;
+  rocket.src = 'images/rocket2.gif';
   button.classList.add('disabled');
   window.setInterval(chronoLaunch, 1000);
 });
@@ -24,6 +26,7 @@ function chronoLaunch() {
   }
   else {
       span.innerText = chrono;
+      rocket.src = 'images/rocket3.gif';
   }
 }
 /************************************************************************************/
