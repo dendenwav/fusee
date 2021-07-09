@@ -9,15 +9,18 @@ let button = document.querySelector('#firing-button');
 let span = document.querySelector('span');
 let rocket = document.querySelector('#rocket');
 
-button.addEventListener('click',function() {
+button.addEventListener('click', decollage);
+/***********************************************************************************/
+/* ********************************** FONCTIONS ************************************/
+/***********************************************************************************/
+
+function decollage() {
+  button.removeEventListener('click', decollage);
   chrono = 10;
   rocket.src = 'images/rocket2.gif';
   button.classList.add('disabled');
   window.setInterval(chronoLaunch, 1000);
-});
-/***********************************************************************************/
-/* ********************************** FONCTIONS ************************************/
-/***********************************************************************************/
+}
 
 function chronoLaunch() {
   if (chrono !== 0) {
