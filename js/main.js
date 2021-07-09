@@ -12,6 +12,7 @@ let width = window.innerWidth;
 let height = window.innerHeight;
 let ciel = document.querySelector('main');
 let cancelButton;
+let launch;
 
 /***********************************************************************************/
 /* ********************************** FONCTIONS ************************************/
@@ -22,7 +23,7 @@ function decollage() {
   chrono = 10;
   rocket.src = 'images/rocket2.gif';
   button.classList.add('disabled');
-  let launch = window.setInterval(chronoLaunch, 1000);
+  launch = window.setInterval(chronoLaunch, 1000);
 }
 
 function chronoLaunch() {
@@ -63,8 +64,8 @@ function createCancelButton() {
   cancelButton = document.createElement('img');
   cancelButton.src = 'images/cancel-button.png';
   cancelButton.style.position = 'absolute';
-  cancelButton.style.left = '300px';
-  cancelButton.style.bottom = '100px';
+  cancelButton.style.left = '100px';
+  cancelButton.style.bottom = '300px';
   cancelButton.style.width = '75px';
   cancelButton.style.height = '75px';
   cancelButton.style.cursor = 'pointer';
