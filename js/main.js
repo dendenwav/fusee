@@ -23,17 +23,18 @@ function decollage() {
   chrono = 10;
   rocket.src = 'images/rocket2.gif';
   button.classList.add('disabled');
+  cancelButton.classList.remove('disabled');
   launch = window.setInterval(chronoLaunch, 1000);
 }
 
 function chronoLaunch() {
   if (chrono !== 0) {
-    span.innerText = chrono;
+    span.textContent = chrono;
     --chrono;
     cancelButton.addEventListener('click', cancelDecollage);
   }
   else {
-      span.innerText = chrono;
+      span.textContent = chrono;
       rocket.src = 'images/rocket3.gif';
       rocket.classList.add('tookOff');
       cancelButton.classList.add('disabled');
@@ -43,7 +44,15 @@ function chronoLaunch() {
 
 function cancelDecollage() {
   window.clearInterval(launch);
+  rocket.src = 'images/rocket1.png';
+  cancelButton.classList.add('disabled');
+  button.classList.remove('disabled');
+  chrono = null;
+  span.textContent = chrono;
+  button.addEventListener('click', decollage);
 }
+
+
 
 function randomStar() {
   let tab = ['tiny', 'normal', 'big'];
@@ -70,6 +79,7 @@ function createCancelButton() {
   cancelButton.style.height = '75px';
   cancelButton.style.cursor = 'pointer';
   ciel.appendChild(cancelButton);
+  cancelButton.classList.add('disabled');
 }
 
 /************************************************************************************/
