@@ -27,6 +27,7 @@ function chronoLaunch() {
   else {
       span.innerText = chrono;
       rocket.src = 'images/rocket3.gif';
+      rocket.classList.add('tookOff');
   }
 }
 /************************************************************************************/
